@@ -110,8 +110,7 @@
                                 // this.$store.commit("changeLogin", {isLogin: true})
                                 // // localStorage.setItem(createKey("isLogin"),'true')
                                 // setItem(createKey("isLogin"),true,Date.now()+50000)
-                                this.$store.commit("changeLoginModelVisible", {isShow: false})
-                                this.$store.dispatch("checkLoginStatus")
+
                             }
 
                         })

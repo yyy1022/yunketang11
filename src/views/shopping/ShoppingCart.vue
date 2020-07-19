@@ -1,6 +1,6 @@
 <template>
-    <div class="shop-car-container">
-        <p class="shop-car-title"><span class="shop-car">我的购物车</span></p>
+    <div class="shop-car-box">
+        <p class="shop-car-title"><span class="shop-car">我的购物车共</span><span>{{list.length}}</span>件</p>
         <div class="shop">
             <ul class="shop-car-table">
                 <li style="width: 200px;text-align: left ">
@@ -25,8 +25,9 @@
                 </li>
                 <li style="width: 300px;">{{item.course.courseTitle}}</li>
                 <li style="width: 150px; text-align: center">
-                    <span class="old-price">￥{{item.course.coursePrice}}</span>
                     <span class="new-price">￥{{item.course.discountPrice}}</span>
+                    <span class="old-price">￥{{item.course.coursePrice}}</span>
+
                 </li>
                 <li style="width: 280px; text-align: center">
                     <span class="limit-time">限时钜惠</span>
@@ -142,7 +143,7 @@
     ul{
         list-style: none;
     }
-    .shop-car-container {
+    .shop-car-box {
         width: 1200px;
         margin: 0 auto;
         padding: 20px;
@@ -192,6 +193,10 @@
             .selected {
                 display: flex;
                 justify-content: center;
+                img{
+                    width: 180px;
+                    height: 100px;
+                }
                 .box {
                     line-height: 50px;
                 }

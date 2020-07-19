@@ -5,7 +5,7 @@ import router from "./router";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import store from "../src/store/index"
-
+import  "../src/assets/icon/font_1944593_mr3l30y8aa/iconfont.css"
 Vue.use(VueAxios, axios);
 
 import {

@@ -3,7 +3,7 @@
         <div class="left"><img :src="detail.coverFileUrl"></div>
         <div class="right">
             <div class="right-text">{{detail.courseTitle}}
-                <div class="collect" @click="collect"><i class="el-icon-cloudy"></i>收藏</div>
+                <div :class="getLike?'collectOne':'collect'" @click="collect"><i class="el-icon-cloudy"></i>收藏</div>
                 <!--                <div class="collect changeCollect"><i class="el-icon-cloudy"></i>收藏</div>-->
             </div>
             <p class="study">累计{{detail.participationsCount}}人学习<i class="el-icon-star-on"></i><i
@@ -57,8 +57,17 @@
             // eslint-disable-next-line vue/no-dupe-keys
             collect() {
                 if (this.loginClick()) {
-                    console.log("可以收藏")
-                    // collect=this.getLike
+                    // console.log("可以收藏")
+                    // console.log(this.isLogin)
+                    if (this.getLike){
+                        this.getLike = false
+                        this.$message('取消收藏');
+                    }else {
+                        this.getLike = true
+                        this.$message('收藏成功');
+                    }
+
+
                 }
 
             },
@@ -68,6 +77,7 @@
                 if (this.loginClick()) {
                     getShoppingCart(this.detail.courseId).then(res => {
                         console.log(res)
+                        this.$message('加入购物车成功');
                     })
                 }
 
@@ -133,6 +143,21 @@
 
     }
 
+    .collectOne {
+        cursor: pointer;
+        /*display: inline-block;*/
+        text-align: center;
+        width: 110px;
+        height: 30px;
+        font-size: 16px;
+        line-height: 26px;
+        border: 1px solid #999;
+        float: right;
+        /*color: #999;*/
+        color: orange;
+        border-color: orange;
+
+    }
 
     .study {
         font-size: 16px;

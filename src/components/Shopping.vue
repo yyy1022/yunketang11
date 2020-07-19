@@ -1,6 +1,6 @@
 <template>
     <div class="shopping-box">
-    <router-link class="icon" to="shopping/cart">
+    <router-link class="icon" to="/shopping/cart">
       <i class="el-icon-shopping-cart-1"></i> |
     </router-link>
 

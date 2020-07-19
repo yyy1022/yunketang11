@@ -42,6 +42,7 @@
     border: 1px solid black;
     background: #444546;
     color: #999;
+    cursor:pointer;
 }
 .f-boxContent {
     width: 1090px;
